@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('components/header.ejs') %>
+
+
+<body>
+    <%- include("components/nav.ejs") %>
+        <div class="profile">
+            <div class="profileCard">
+                <div class="profileImage"><span>
+                    <%= user.name.charAt(0)  %>
+                </span></div>
+
+                <div class="profileName"><%= user.name %></div>
+                <div class="profileEmail"><%= user.email %></div>
+                <div class="profileAddress"><%= user.address %></div>
+                <div class="profilePhone"><%= user.phoneNo %></div>
+                <div class="ProfileCount">
+                    <h6>You have created <%= count %> Posts till now......</h6>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

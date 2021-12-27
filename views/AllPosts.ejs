@@ -1,0 +1,109 @@
+<!-- LogOut Page -->
+<!DOCTYPE html>
+<html lang="en">
+<%- include('components/header.ejs') %>
+    <body>
+        <%- include("components/nav.ejs") %>
+         <div class="banner-section">
+             <div class="left-section">
+                 <h1>Worldoid</h1>
+                 <h6>Place to Share Your Daily Life Stories </h6>
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, amet.</p>
+             </div>
+             <div class="right-section">
+                <video src="./assets/v2.mp4" loop muted autoplay></video>
+             </div>
+         </div>   
+        <div class="All-container">
+            <div class="all-container">
+                <% posts.forEach(post=>{ %>
+                   <div class="Post-Info">
+                    <div class="post-left">
+                      <div class="post-image">
+                          <% if(post.imageExt==="MP4"){ %>
+                            <video src="./assets/img/<%= post.image %>" loop muted autoplay></video>
+                            <% }else{ %>
+                          <img src="./assets/img/<%= post.image %>" alt="image">
+                          <% } %>
+                      </div>
+                    </div>
+                    <div class="post-right">
+                        <div class="post-user-date">
+                        <div class="username">
+                            <h6><%= post.userName %></h6>
+                        </div>
+                        <div class="date">
+                            <h6><%= post.updatedAt %></h6>
+                        </div>
+                        </div>
+
+                      <div class="all-post-title">
+                          <h3><%= post.title %>.</h3>
+                      </div>
+                      <div class="all-post-contenty">
+                          <p><%= post.body %></p>
+                      </div>
+                      <div class="hr-min"></div>
+                      <div class="reaction-bar">
+                          <ul>
+                              <li>
+                            <i class="bi bi-heart"></i> <a href="#">Give it a heart</a>
+                              </li>
+                          </ul>
+                      </div>      
+                   </div> 
+                </div>
+                   <% }) %>
+               
+        </div>
+    </div>
+    <div class="map-contact">
+        <div class="Allposts-contact">
+            <div class="contact-heading">
+            <h1>Contact</h1>
+            </div>
+            <div class="contact-info">
+                <h6>17km Stone, NH-2, Mathura-Delhi Road Mathura, Chaumuhan, Uttar Pradesh 281406</h6>
+                <h6>GLA University</h6>
+                <h6>glauniversity@gla.ac.in</h6>
+            </div>
+        </div>
+        <div class="Allposts-map">
+            <iframe class="mapp"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2998.9368378474896!2d77.59442027208918!3d27.60623018010081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39736ce47bffc039%3A0xfe5fc3da92c6341!2sGLA%20University!5e0!3m2!1sen!2sin!4v1638789253018!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+    
+    <div class="Allposts-footer">
+            <div class="everthing">
+                <div class="footer-title">
+                    <h1>Worldoid</h1>
+                </div>
+                <div class="nav-links">
+                    <ul>
+                        <li>
+                            <a target="_blank" href="https://www.facebook.com/nikunj.gupta.940641/">
+                            <i class="bi bi-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.instagram.com/nikunj0409gupta/">
+                            <i class="bi bi-instagram"></i>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://twitter.com/NikunjG97280097">
+                            <i class="bi bi-twitter"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    <p> &copy; 1999-2021 GLAU/WORLDOID </p>
+                </div>
+            </div>
+    </div>
+    </body>
+</html>
